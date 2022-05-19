@@ -39,15 +39,6 @@ const TodoList = () => {
 
   //renderItem function with a delete button
   const renderItem = ({ item }) => {
-    console.log(item);
-    const itemDelete = ({ item }) => {
-      dispatch(
-        deleteTask({
-          id: item.id,
-        })
-      );
-    };
-
     return (
       <View style={styles.item}>
         <Text style={styles.title}>{item.name}</Text>

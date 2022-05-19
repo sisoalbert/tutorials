@@ -1,13 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 export const taskSlice = createSlice({
   name: "tasks",
   initialState: [],
   reducers: {
     addTask: (state, action) => {
+      console.log(nanoid());
+      // 'dgPXxUz_6fWIQBD8XmiSy'
+
       console.log(action.payload);
       const newTask = {
-        id: action.payload.task,
+        id: nanoid(),
         name: action.payload.task,
       };
       state.push(newTask);
